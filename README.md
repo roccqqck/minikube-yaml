@@ -15,10 +15,6 @@ start dashboard
 minikube dashboard
 ```
 
-install ingress
-```
-minikube addons enable ingress
-```
 
 
 
@@ -49,6 +45,23 @@ Status:
 ...
 ```
 
+
+
+install ingress
+```
+minikube addons enable ingress
+```
+```
+kubectl get ingress
+```
+```
+NAME              CLASS    HOSTS              ADDRESS        PORTS   AGE
+example-ingress   <none>   hello-world.info   172.17.0.15    80      38s
+```
+```
+# /etc/hosts
+172.17.0.15 hello-world.info
+```
 
 
 stop minikube
