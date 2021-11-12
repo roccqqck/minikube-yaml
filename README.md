@@ -52,12 +52,17 @@ install ingress
 minikube addons enable ingress
 ```
 ```
+After the addon is enabled, please run "minikube tunnel" and your ingress resources would be available at "172.17.0.15"
+```
+check ingress
+```
 kubectl get ingress
 ```
 ```
 NAME              CLASS    HOSTS              ADDRESS        PORTS   AGE
 example-ingress   <none>   hello-world.info   172.17.0.15    80      38s
 ```
+edit /etc/hosts
 ```
 # /etc/hosts
 172.17.0.15 hello-world.info
