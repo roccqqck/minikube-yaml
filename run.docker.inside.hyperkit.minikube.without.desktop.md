@@ -4,6 +4,8 @@ https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469
 
 https://gist.github.com/protosam/11800faea25a3f89af9ece4f11c72f1d
 
+https://medium.com/rahasak/replace-docker-desktop-with-minikube-and-hyperkit-on-macos-783ce4fb39e3
+
 
 
 
