@@ -1,8 +1,22 @@
 # minikube-yaml
 
+reference
+
+https://minikube.sigs.k8s.io/docs/handbook/config/
+
+https://minikube.sigs.k8s.io/docs/drivers/
+
+
 ```
 minikube config set driver docker
+minikube config set container-runtime docker
+minikube config set cpus 2
+minikube config set memory 4g
 minikube start
+```
+or
+```
+minikube start --kubernetes-version=v1.19.14 --driver=hyperkit --container-runtime=containerd
 ```
 
 ```
