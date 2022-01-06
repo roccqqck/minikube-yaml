@@ -10,11 +10,39 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx-app
+        app: nginx-app  # for service
     spec:
       containers:
       - name: nginx-app
         image: nginx:stable
         imagePullPolicy: Always
+############# advanced setting not necessarily
         ports:
         - containerPort: 80
+        resources:
+          requests: 
+            cpu: 1m
+            memory: 10Mi
+          limits:
+            cpu: 1
+            memory: 1G
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+          initialDelaySeconds: 10
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
