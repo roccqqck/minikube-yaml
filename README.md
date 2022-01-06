@@ -32,13 +32,27 @@ minikube dashboard
 
 
 
-show nginx-app-service url
+## show nginx-app-service url
 ```
 minikube service nginx-app-service --url
 ```
 
+or use kubectl port-forward
+```
+kubectl get svc    
+```       
+```                          
+NAME                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+nginx-app-service   ClusterIP   10.101.246.134   <none>        8080/TCP   78m
+```
+```
+kubectl port-forward svc/nginx-app-service 8081:8080
+```
+http://localhost:8081
 
-if service type:LoadBalancer
+
+
+## if service type:LoadBalancer
 ```
 minikube tunnel
 ```
@@ -61,7 +75,7 @@ Status:
 
 
 
-install ingress
+## install ingress
 ```
 minikube addons enable ingress
 ```
@@ -82,6 +96,27 @@ edit /etc/hosts
 172.17.0.15 hello-world.info
 ```
 
+
+show minikube images
+```
+minikube image list
+```
+
+Create a second cluster
+```
+minikube start -p ClusterName
+```
+
+show minikube clusters list
+```
+minikube profile list
+```
+
+change minikube profile cluster
+```
+minikube profile default
+minikube profile ClusterName
+```
 
 stop minikube
 ```
