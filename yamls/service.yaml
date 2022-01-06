@@ -4,9 +4,10 @@ metadata:
   name: nginx-app-service
 spec:
   selector:
-    app: nginx-app
+    app: nginx-app  # deployment.spec.template.metadata.labels.app
   ports:
   - protocol: "TCP"
+    name: http
     port: 8080  # service port
     targetPort: 80  # container port
   # nodePort: 30080
